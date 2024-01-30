@@ -175,7 +175,7 @@ int main() {
         }
     }
 
-    // Display the results
+    // Display the resultsfgf
     cout << "Number of locksmiths: " << countLocksmith << endl;
     cout << "Number of turners: " << countTurner << endl;
 
