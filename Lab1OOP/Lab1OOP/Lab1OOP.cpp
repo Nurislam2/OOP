@@ -1,7 +1,7 @@
 ﻿////№1
 //#include <iostream>
 //using namespace std;
-//double power(double n, int p) {
+//double power(double n, int p=2) {
 //        double nn = n;
 //        for (int i = 1; i < p; i++) {
 //            n = nn * n;
@@ -17,14 +17,28 @@
 //    cout << "Введите число и степень в которую ее надо возвести!\n";
 //    cout << "double: ";
 //    cin >> n;
-//    cout << "степень: ";
-//    cin >> p;
-//    cout << "Ответ: ";
-//    cout << power(n,p);
+//    cout << "Будете вводить степень (y/n)? ";
+//    char choice;
+//    cin >> choice;
+//    if (choice == 'y' || choice == 'Y') {
+//        cout << "Введите степень (больше 2): ";
+//        cin >> p;
+//
+//        if (p < 2) {
+//            cout << "Некорректная степень. Используется значение по умолчанию (2).\n";
+//            p = 2;
+//        }
+//    }
+//    else {
+//        p = 2; // Используется значение по умолчанию, если пользователь не хочет вводить степень
+//    }
+//
+//    cout << "Ответ: " << power(n, p) << endl;
+//
 //    return 0;
 //}
+
 //
-//2
 //#include <iostream>
 //using namespace std;
 //double power(double n, int p=2);
@@ -35,9 +49,10 @@
 //int main()
 //{
 //    setlocale(0, "");
+//    int ascii;
 //    int p;
 //    double n;
-//    char c;
+//    char c,r;
 //    long int l;
 //    float f;
 //    cout << "Введите число и степень в которую ее надо возвести!\n";
@@ -46,7 +61,12 @@
 //    cout << "Ответ: "<< power(n)<<endl;
 //    cout << "Char: ";
 //    cin >> c;
+//    ascii = c;
+//
 //    cout << "Ответ: " << power(c)<<endl;
+//    r = power(c);
+//    ascii = r;
+//
 //    cout << "Long int: ";
 //    cin >> l;
 //    cout << "Ответ: " << power(l)<<endl;
@@ -63,7 +83,7 @@
 //}
 //
 //char power(char n, int p) {
-//    char nn = n;
+//    int nn = n;
 //    for (int i = 1; i < p; i++) {
 //        n = nn * n;
 //    }
@@ -92,7 +112,7 @@
 //}
 
 
-
+//
 //№3
 #include <iostream>
 #include <vector>
@@ -144,12 +164,12 @@ int main() {
     int countLocksmith = 0;
     int countTurner = 0;
 
-    for (const auto& factory : factories) {
-        for (const auto& employee : factory) {
-            if (employee.specialty == "locksmith") {
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < factories[i].size(); ++j) {
+            if (factories[i][j].specialty == "locksmith") {
                 countLocksmith++;
             }
-            else if (employee.specialty == "turner") {
+            else if (factories[i][j].specialty == "turner") {
                 countTurner++;
             }
         }
