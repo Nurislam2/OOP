@@ -62,7 +62,7 @@ int main() {
     std::cin >> choice;
 
     if (choice == 1) {
-        // Ручной ввод
+        // Ручной вво
         int wagon;
         std::cout << "Enter wagon numbers (enter a non-integer to stop):\n";
         while (std::cin >> wagon) {
